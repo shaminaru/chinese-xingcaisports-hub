@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日常探索 · 杏彩体育</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f6f0;
+      font-family: 'Georgia', '宋体', 'Noto Serif SC', 'Times New Roman', serif;
+      color: #2c2c2c;
+      line-height: 1.85;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fcfaf7;
+      padding: 2.5rem 2.2rem;
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    /* hero 开场 */
+    .opening {
+      font-size: 1.3rem;
+      letter-spacing: 0.02em;
+      color: #4b3e2e;
+      margin-bottom: 1.8rem;
+      padding-left: 1px;
+      border-left: 4px solid #d9c8b2;
+      padding-left: 1.2rem;
+    }
+
+    .opening span {
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .opening strong {
+      font-weight: 600;
+      color: #7a5f44;
+    }
+
+    /* 承接段落 */
+    p {
+      margin-bottom: 1.4rem;
+      font-size: 1rem;
+      text-align: justify;
+      word-break: break-word;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #3f362b;
+      margin-top: 0.2rem;
+      margin-bottom: 2rem;
+      background: #f4eee6;
+      padding: 0.9rem 1.5rem;
+      border-radius: 18px;
+      text-indent: 2em;
+    }
+
+    /* 特点列表 – 更像手记卡片 */
+    .traits {
+      list-style: none;
+      margin: 2.2rem 0 2.5rem 0;
+    }
+
+    .traits li {
+      background: white;
+      border-radius: 20px;
+      padding: 1.1rem 1.6rem;
+      margin-bottom: 0.9rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      border: 1px solid #ece3d9;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
+    .traits li::before {
+      content: "—";
+      color: #b39a7e;
+      font-weight: 300;
+      display: inline-block;
+      width: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .traits li strong {
+      color: #6a4f37;
+      font-weight: 600;
+      margin-right: 0.25rem;
+    }
+
+    /* 引用框 / 提示框 */
+    .note-box {
+      background: #efe8de;
+      border-left: 6px solid #b7a087;
+      padding: 1.2rem 1.8rem;
+      border-radius: 20px;
+      margin: 2rem 0 2.2rem 0;
+      font-size: 0.97rem;
+    }
+
+    .note-box p {
+      margin-bottom: 0.3rem;
+    }
+
+    .note-box .label {
+      font-weight: 600;
+      color: #5a4a36;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-bottom: 0.4rem;
+    }
+
+    /* FAQ 摘要——温和、克制 */
+    .faq-mini {
+      background: #f8f4ed;
+      padding: 1.4rem 1.8rem;
+      border-radius: 24px;
+      margin: 2rem 0 1.8rem 0;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #514334;
+      margin-bottom: 0.15rem;
+      font-size: 0.98rem;
+    }
+
+    .faq-a {
+      color: #5f5548;
+      padding-left: 0.2rem;
+      font-size: 0.93rem;
+    }
+
+    .faq-a a {
+      color: #785f46;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #d4c2ad;
+    }
+
+    .faq-a a:hover {
+      color: #3f2f1f;
+      text-decoration-color: #785f46;
+    }
+
+    /* 温和结尾 */
+    .closing {
+      margin-top: 2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e2d7ca;
+      font-size: 0.95rem;
+      color: #4b4137;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.8rem;
+    }
+
+    .closing a {
+      color: #785f46;
+      text-decoration: none;
+      border-bottom: 1px solid #dacebd;
+      padding-bottom: 1px;
+      font-weight: 400;
+      transition: border-color 0.2s;
+    }
+
+    .closing a:hover {
+      border-bottom-color: #785f46;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.6rem;
+      }
+      .page {
+        padding: 1.8rem 1.2rem;
+        border-radius: 18px;
+      }
+      .opening {
+        font-size: 1.15rem;
+        padding-left: 0.8rem;
+      }
+      .traits li {
+        flex-direction: column;
+        gap: 0.2rem;
+        padding: 0.9rem 1rem;
+      }
+      .traits li::before {
+        width: auto;
+        margin-bottom: 0.2rem;
+      }
+      .note-box {
+        padding: 0.9rem 1rem;
+      }
+      .closing {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .page {
+        padding: 3.2rem 3.5rem;
+      }
+      .opening {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- 开场短句：日常生活里的一次对照 -->
+    <div class="opening">
+      <span>偶尔会想翻一翻体育资讯，</span>
+      <span>看看赛程、查查数据、读读延伸的讨论——</span>
+      <span>然后发现，原来整理好的信息就在那里。</span>
+    </div>
+
+    <!-- 承接段落：从日常查询切入 -->
+    <p class="lead">
+      最近习惯在周末早晨打开一个体育信息页面，不是一定要追某场比赛，而是想对照一下不同联赛的节奏、球员的近况，或者单纯浏览一下专栏里的分析。网页书签里存了几个常用的站点，其中一个就是后来常打开的页面——内容编排得清晰，版式也不花哨，很适合慢慢翻看。如果你也偶尔需要这样的对照阅读，不妨看看 <a href="https://chinese-xingcaisports.com" style="color: #785f46; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #d4c2ad;">杏彩体育</a> 的呈现方式，算是一种延续阅读的选择。
+    </p>
+
+    <p>
+      说实话，最初只是随手点进去，后来发现里面的板块分类比预期细致：从综合新闻到单项赛事，从数据统计到延伸阅读，每一块都没有冗余的装饰。更重要的是，它没有用那种夸张的标题或者紧迫的倒计时来吸引注意力，反而保留了一种“你可以随时翻阅”的从容感。
+    </p>
+
+    <!-- 特点列表：像手账条目 -->
+    <ul class="traits">
+      <li><strong>赛程与对照</strong> 联赛、杯赛、预选赛按时间线排列，便于横向比较；点击日期还能看到同一时段的多场对阵。</li>
+      <li><strong>数据延伸</strong> 每场比赛后有简明的统计卡片——控球率、射门次数、关键传球，适合快速扫读。</li>
+      <li><strong>文章专栏</strong> 偶尔会有战术复盘或人物侧写，篇幅不长，但切入点不落俗套，读起来像和朋友聊天。</li>
+      <li><strong>版式稳定</strong> 没有突然弹出的窗口，也没有强制登录的提示；页面加载后就能直接浏览，印象里一直很安静。</li>
+    </ul>
+
+    <!-- 提示框：温和提醒 -->
+    <div class="note-box">
+      <div class="label">📌 一点个人提示</div>
+      <p>如果你也喜欢把体育信息当作日常阅读的一部分，建议先花几分钟熟悉一下导航结构——左侧的分类菜单藏着不少内容，比如“经典赛事”和“延伸阅读”板块。另外，页面底部的链接偶尔会更新一些专题，值得偶尔下拉看一眼。</p>
+    </div>
+
+    <!-- FAQ 摘要：自然融入问答 -->
+    <div class="faq-mini">
+      <div class="faq-item">
+        <div class="faq-q">—— 这个网站适合只看某一项运动的人吗？</div>
+        <div class="faq-a">内容覆盖了多种主流项目，但每个板块相对独立，你完全可以只关注自己感兴趣的部分，不会被其他信息淹没。如果需要更多资源，可以顺手把 <a href="https://chinese-xingcaisports.com">杏彩体育</a> 加入书签夹。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">—— 页面里的延伸阅读质量怎么样？</div>
+        <div class="faq-a">大部分文章偏重数据和背景，没有太多主观评价。适合在通勤或午休时翻一两篇，不会有信息过载的感觉。</div>
+      </div>
+    </div>
+
+    <!-- 温和结尾：没有催促，只是收束 -->
+    <div class="closing">
+      <span>希望这个索引对你有用。</span>
+      <span><a href="https://chinese-xingcaisports.com">杏彩体育</a> · 日常体育信息的一角</span>
+    </div>
+  </div>
+</body>
+</html>
